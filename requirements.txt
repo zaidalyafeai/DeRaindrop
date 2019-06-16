@@ -1,0 +1,7 @@
+runway-python
+Pillow==6.0.0
+six
+numpy
+torch==1.1.0
+torchvision
+opencv-python

@@ -42,12 +42,15 @@ class DERAINDROP_MODEL():
     def __init__(self, opts):
         self.model = Generator().cuda()
         self.model.load_state_dict(torch.load('./weights/gen.pkl'))
+        print('done.')
         
     # Generate an image based on some text.
     def clean(self, img):
+        print('starting inference...')
         img = self.align_to_four(np.array(img))
         result = self.predict(img)
-        return np.uint8(result[:,:,::-1])
+        print('done.')
+        return np.uint8(result)
 
     def align_to_four(self, img):
 
